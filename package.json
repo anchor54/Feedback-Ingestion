@@ -1,0 +1,52 @@
+{
+  "name": "enterpret",
+  "version": "1.0.0",
+  "description": "## 1\\. Introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "node dist/services/webhook/server.js",
+    "dev:webhook": "nodemon src/services/webhook/server.ts",
+    "dev:processor": "nodemon src/services/processing/processor.ts",
+    "dev:polling": "nodemon src/services/polling/pollingService.ts",
+    "test:webhook": "npm run build && node test-webhook-sender.js",
+    "test:webhook:interactive": "npm run build && node test-webhooks-interactive.js",
+    "test:webhook:single": "npm run build && node test-webhook-sender.js single",
+    "test:webhook:burst": "npm run build && node test-webhook-sender.js burst",
+    "test:webhook:continuous": "npm run build && node test-webhook-sender.js start",
+    "docker:start": "./docker-start.sh",
+    "docker:stop": "./docker-stop.sh",
+    "docker:dev": "docker compose -f docker-compose.dev.yml up -d",
+    "docker:dev:stop": "docker compose -f docker-compose.dev.yml down",
+    "docker:build": "docker compose build",
+    "docker:logs": "docker compose logs -f",
+    "docker:logs:webhook": "docker compose logs -f webhook-service",
+    "docker:logs:processor": "docker compose logs -f processing-service",
+    "docker:logs:polling": "docker compose logs -f polling-service"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jsonpath": "^0.2.4",
+    "axios": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonpath": "^1.1.1",
+    "kafkajs": "^2.2.4",
+    "mongoose": "^8.16.0",
+    "redis": "^5.5.6",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.3",
+    "jest": "^30.0.2",
+    "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
