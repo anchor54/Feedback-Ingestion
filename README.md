@@ -486,19 +486,7 @@ db.pollingconfigs.insertOne({
 ### Backup and Recovery
 - **MongoDB Backups**: Regular automated backups
 - **Kafka Retention**: Configure appropriate message retention
-- **Disaster Recovery**: Multi-region deployment strategies
-
-## 🤝 Contributing
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/new-source`)
-3. **Commit** your changes (`git commit -am 'Add new source support'`)
-4. **Push** to the branch (`git push origin feature/new-source`)
-5. **Create** a Pull Request
-
-## 📄 License
-
-This project is licensed under the ISC License.
+- **Disaster Recovery**: Multi-region dep
 
 ## 🆘 Troubleshooting
 
@@ -531,14 +519,9 @@ docker compose logs mongodb
 - Check Kafka UI for messages in `feedback-ingestion` topic
 - Review application logs for errors
 
-### Getting Help
+### Monitoring and Logs
 
 1. **Check Logs**: Review application and Docker container logs
 2. **Kafka UI**: Monitor message flow through `http://localhost:8080`
 3. **MongoDB**: Query database directly to verify data storage
 4. **Health Endpoints**: Use `/health` and `/webhooks/info` endpoints
-
-For additional support, please create an issue in the repository with:
-- Error messages and logs
-- Steps to reproduce
-- Environment details 
